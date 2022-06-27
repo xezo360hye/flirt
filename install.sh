@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PS3="Choose which version to install (extended contains blinking): "
+PS3="Choose a version to install (extended contains blinking): "
 
 select v in default extended; do
 	case $v in
