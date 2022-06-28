@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PS3="Choose wich version to install (extended contains blinking): "
+PS3="Choose a version to install (extended contains blinking): "
 
 select v in default extended; do
 	case $v in
@@ -21,4 +21,4 @@ trap 'cmd=\$BASH_COMMAND; \
 ~/.flirt; unset prompt' DEBUG
 EOF
 
-echo "Installation success, (re)start bash for the changes to take effect"
+echo "Installation success, start bash again for the changes to take effect"
