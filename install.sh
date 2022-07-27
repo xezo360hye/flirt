@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "P.S backup your .bashrc before you install flirt just in case."
+
 PS3="Choose a version to install (extended contains blinking): "
 
 select v in default extended; do
