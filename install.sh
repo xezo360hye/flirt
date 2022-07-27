@@ -11,7 +11,7 @@ select v in default extended; do
 	break
 done
 
-cd ..
+cd
 rm -rf flirt
 
 cat << EOF >> .bashrc
