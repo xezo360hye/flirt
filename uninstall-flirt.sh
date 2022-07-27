@@ -4,8 +4,9 @@ select choice in yes no; do
 case $choice in
 yes) rm .flirt ;;
 no) exit
+      esac
+      break
+done
+
 rm .bashrc
 echo "Successfully uninstalled, thank you for using flirt. Have a nice morning/afternoon/night!"
-		esac
-	done
-}
