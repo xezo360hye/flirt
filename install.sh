@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mv uninstall-flirt.sh /root/uninstall-flirt.sh
+
 echo "P.S backup your .bashrc before you install flirt just in case."
 
 PS3="Choose a version to install (extended contains blinking): "
