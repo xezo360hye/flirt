@@ -1,5 +1,9 @@
 #!/bin/bash
 
+mkdir /root/bashrc_backup
+
+cp /root/.bashrc /root/bashrc_backup
+
 mv uninstall-flirt.sh /root/uninstall-flirt.sh
 
 echo "P.S backup your .bashrc before you install flirt just in case."
@@ -24,24 +28,6 @@ PROMPT_COMMAND="prompt=1"
 trap 'cmd=\$BASH_COMMAND; \
 [[ "\$prompt" && "\$cmd" != "\$PROMPT_COMMAND" ]] && \
 ~/.flirt; unset prompt' DEBUG
-EOF
-
-touch uninstall-flirt.sh
-cat << EOF >> uninstall-flirt.sh
-
-#!/bin/bash
-PS3="Are you sure you want to uninstall flirt?: "
-select choice in yes no; do
-case $choice in
-yes) rm .flirt ;;
-no) exit
-
-rm .bashrc
-cat .bashrc
-echo "Successfully uninstalled, thank you for using flirt. Have a nice morning/afternoon/night!"
-		esac
-	done
-}
 EOF
 
 chmod +x .flirt
