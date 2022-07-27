@@ -6,7 +6,7 @@ cp /root/.bashrc /root/bashrc_backup
 
 mv uninstall-flirt.sh /root/uninstall-flirt.sh
 
-echo "P.S we have backed up your bashrc, which is stored in bashrc_backup, because uninstalling flirt will delete bashrc that's currently in the root directory."
+echo "P.S we have backed up your bashrc, which is stored in the bashrc_backup folder(you should be able to find it), because uninstalling flirt will delete bashrc that's currently in the root directory."
 
 PS3="Choose a version to install (extended contains blinking): "
 
