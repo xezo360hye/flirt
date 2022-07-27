@@ -24,4 +24,4 @@ EOF
 
 chmod +x .flirt
 
-echo "Installation success, start bash again for the changes to take effect"
+echo "Installation success, start bash again for the changes to take effect.\nif you need to uninstall it, run bash uninstall-flirt.sh"
