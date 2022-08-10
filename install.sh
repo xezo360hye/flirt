@@ -1,8 +1,8 @@
 #!/bin/bash
 
-mkdir /root/bashrc_backup
+mkdir /root/.bashrc_backup
 
-cp /root/.bashrc /root/bashrc_backup
+cp $HOME/.bashrc /root/.bashrc_backup
 
 mv uninstall-flirt.sh /root/uninstall-flirt.sh
 
