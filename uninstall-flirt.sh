@@ -9,4 +9,5 @@ no) exit
 done
 
 rm .bashrc
+mv /root/.bashrc_backup/.bashrc $HOME/.bashrc
 echo "Successfully uninstalled, thank you for using flirt. Have a nice morning/afternoon/night!"
