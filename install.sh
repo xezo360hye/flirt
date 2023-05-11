@@ -1,21 +1,29 @@
 #!/bin/bash
 
-cp "$HOME/.bashrc" "$HOME/.bashrc_backup"
+mkdir /root/.bashrc_backup
 
-echo "We have backed up your .bashrc and stored in the .bashrc_backup file, because uninstalling flirt will delete .bashrc that's currently in the $HOME directory"
+cp $HOME/.bashrc /root/.bashrc_backup
+
+mv uninstall-flirt.sh /root/uninstall-flirt.sh
+
+echo "We have backed up your bashrc, which is stored in the bashrc_backup folder(you should be able to find it), because uninstalling flirt will delete bashrc that's currently in the root directory."
 
 PS3="Choose a version to install (extended contains blinking): "
+
 select v in default extended; do
 	case $v in
-        default)  mv  flirt.sh	~/.flirt ;;
-        extended) mv eflirt.sh	~/.flirt ;;
+	default) mv flirt.sh	~/.flirt ;;
+	extended) mv eflirt.sh	~/.flirt ;;
         exit) exit ;;
-        *) continue ;;
+	*) continue ;;
 	esac
 	break
 done
 
-cat << EOF >> "$HOME/.bashrc"
+cd
+rm -rf flirt
+
+cat << EOF >> .bashrc
 
 PROMPT_COMMAND="prompt=1"
 trap 'cmd=\$BASH_COMMAND; \
@@ -23,5 +31,6 @@ trap 'cmd=\$BASH_COMMAND; \
 ~/.flirt; unset prompt' DEBUG
 EOF
 
-echo "Installation success, start bash again for the changes to take effect"
-echo "If you need to uninstall it, run ./uninstall-flirt.sh"
+chmod +x .flirt
+
+echo "Installation success, start bash again for the changes to take effect. if you need to uninstall it, run bash uninstall-flirt.sh"
